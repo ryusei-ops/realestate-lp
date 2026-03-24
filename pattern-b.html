@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>売れるか不安な土地・家の無料相談 | 専門家がLINEで対応</title>
+<style>
+  :root {
+    --black: #1a1a1a;
+    --gray: #6b7280;
+    --gray-light: #9ca3af;
+    --light: #f8f9fa;
+    --white: #fff;
+    --dark-bg: #111827;
+    --dark-card: #1f2937;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 20px 60px;
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,99,235,.2);
+    border: 1px solid rgba(37,99,235,.4);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #60a5fa;
+    letter-spacing: .02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: -.01em;
+  }
+  .hero h1 strong {
+    color: #60a5fa;
+    font-size: 34px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: #9ca3af;
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 40px;
+    background: #06c755;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(6,199,85,.4);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(6,199,85,.5);
+  }
+  .cta-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+  .cta-note {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 12px;
+  }
+
+  /* ===== PAIN ===== */
+  .pain {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .pain h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .pain > p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 32px;
+  }
+  .pain-list {
+    list-style: none;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .pain-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+    color: var(--black);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.6;
+  }
+  .pain-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    letter-spacing: -.01em;
+    line-height: 1.4;
+    color: var(--black);
+  }
+
+  /* ===== COMPARE ===== */
+  .compare {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .compare .section-title {
+    margin-bottom: 32px;
+  }
+  .compare-desc {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .compare-table {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    text-align: left;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-head {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 14px 12px;
+    background: #f9fafb;
+    color: var(--gray);
+  }
+  .compare-head:last-child {
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+  .compare-cell {
+    font-size: 13px;
+    padding: 14px 12px;
+    color: var(--black);
+    line-height: 1.5;
+  }
+  .compare-cell:last-child {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .compare-cell.label {
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 12px;
+  }
+
+  /* ===== TYPES ===== */
+  .types {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .types .section-title {
+    margin-bottom: 40px;
+  }
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .type-card {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: left;
+  }
+  .type-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .type-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ===== FLOW ===== */
+  .flow {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .flow-step {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .flow-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .flow-step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .flow-step p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== WHY US ===== */
+  .why {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .why-card {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: left;
+  }
+  .why-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .why-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== RISK ===== */
+  .risk {
+    padding: 64px 20px;
+    background: #fffbeb;
+    text-align: center;
+  }
+  .risk h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .risk > p {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .risk-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .risk-box li {
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--black);
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
+  }
+  .risk-box li + li {
+    border-top: 1px solid #fde68a;
+  }
+  .risk-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: #f59e0b;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .faq-list {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 0;
+  }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .faq-q::before {
+    content: 'Q';
+    flex-shrink: 0;
+    color: var(--accent);
+    font-weight: 800;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    padding-left: 22px;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    padding: 64px 20px;
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .final-cta p {
+    font-size: 15px;
+    color: #9ca3af;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .final-cta .cta-note {
+    color: #6b7280;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-light);
+    background: #f3f4f6;
+  }
+  footer a {
+    color: var(--gray);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 640px) {
+    .hero { padding: 120px 40px 80px; }
+    .hero h1 { font-size: 36px; }
+    .hero h1 strong { font-size: 48px; }
+    .section-title { font-size: 28px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .flow-steps { max-width: 560px; }
+  }
+
+  /* ===== FLOATING CTA ===== */
+  .floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 20px;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+  }
+  .floating-cta .cta-btn {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  @media (min-width: 640px) {
+    .floating-cta { display: none; }
+  }
+  body { padding-bottom: 72px; }
+  @media (min-width: 640px) { body { padding-bottom: 0; } }
+
+  .line-svg { width: 22px; height: 22px; fill: currentColor; }
+  .line-svg-sm { width: 18px; height: 18px; fill: currentColor; }
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-badge">不動産の無料相談 / LINEで完結</div>
+  <h1>
+    <strong>その土地・空き家<br>売れないって諦めていませんか？</strong>
+    古い家、相続した土地、条件が複雑な物件も<br>専門家が売却方法をご提案します。
+  </h1>
+  <p class="hero-sub">
+    大手にはできない、一人ひとりの物件に合わせた対応。<br>
+    まずはLINEで状況を教えてください。
+  </p>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+</section>
+
+<!-- ========== PAIN ========== -->
+<section class="pain">
+  <h2>こんなお悩みありませんか？</h2>
+  <p>一つでも当てはまるなら、ご相談ください。</p>
+  <ul class="pain-list">
+    <li><span class="pain-check"></span>相続した家や土地があるが、どう処分すればいいかわからない</li>
+    <li><span class="pain-check"></span>古い家だから売れないだろうと思い込んでいる</li>
+    <li><span class="pain-check"></span>不動産屋に相談したいが、しつこく営業されそうで躊躇している</li>
+    <li><span class="pain-check"></span>一括査定サイトを使ったら電話が鳴り止まなかった</li>
+    <li><span class="pain-check"></span>使っていない土地の固定資産税を毎年払い続けている</li>
+    <li><span class="pain-check"></span>条件が難しいと言われたが、本当に方法がないのか知りたい</li>
+  </ul>
+</section>
+
+<!-- ========== TYPES ===== -->
+<section class="types">
+  <p class="section-label">Covered</p>
+  <h2 class="section-title">こんな物件も対応できます</h2>
+  <div class="type-grid">
+    <div class="type-card">
+      <h3>古家付き土地</h3>
+      <p>築年数が古くても売却方法はあります</p>
+    </div>
+    <div class="type-card">
+      <h3>相続した物件</h3>
+      <p>登記手続きの段階からサポート</p>
+    </div>
+    <div class="type-card">
+      <h3>空き家・空き地</h3>
+      <p>遠方で管理できない物件も対応</p>
+    </div>
+    <div class="type-card">
+      <h3>再建築不可</h3>
+      <p>建て替えできなくても売却ルートあり</p>
+    </div>
+    <div class="type-card">
+      <h3>接道なし</h3>
+      <p>問題を整理した上で売却方法を提案</p>
+    </div>
+    <div class="type-card">
+      <h3>変形地・狭小地</h3>
+      <p>住宅以外の活用も含めて検討</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPARE ========== -->
+<section class="compare">
+  <p class="section-label">Difference</p>
+  <h2 class="section-title">大手との違い</h2>
+  <p class="compare-desc">
+    大手不動産会社や一括査定サイトは、売りやすい物件を優先します。<br>
+    条件が複雑だったり、地方の物件は後回しにされがちです。
+  </p>
+  <div class="compare-table">
+    <div class="compare-row">
+      <div class="compare-head"></div>
+      <div class="compare-head">大手・一括査定</div>
+      <div class="compare-head">私たち</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">対応物件</div>
+      <div class="compare-cell">売りやすい物件中心</div>
+      <div class="compare-cell">条件問わず対応</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">営業</div>
+      <div class="compare-cell">複数社から電話</div>
+      <div class="compare-cell">1対1、LINE完結</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">判断方法</div>
+      <div class="compare-cell">書類・データのみ</div>
+      <div class="compare-cell">必要に応じ現地確認</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">対応速度</div>
+      <div class="compare-cell">数日〜数週間</div>
+      <div class="compare-cell">LINE即日ヒアリング</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FLOW ========== -->
+<section class="flow">
+  <p class="section-label">How it works</p>
+  <h2 class="section-title">ご相談の流れ</h2>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div>
+        <h3>LINEで友だち追加</h3>
+        <p>ボタンを押して友だち追加。10秒で完了します。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div>
+        <h3>AIが状況をヒアリング</h3>
+        <p>物件の種類、エリア、お悩みなどをチャットで質問します。わかる範囲でOKです。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div>
+        <h3>専門スタッフがご提案</h3>
+        <p>ヒアリング内容をもとに、あなたの物件に合った売却方法と概算価格をお伝えします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ===== -->
+<section class="why">
+  <p class="section-label">Why us</p>
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <p class="why-num">01</p>
+      <h3>条件が難しい物件に強い</h3>
+      <p>古い物件、再建築不可、接道なし。一般的な不動産会社が敬遠しがちな物件にも向き合います。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">02</p>
+      <h3>現場主義で判断します</h3>
+      <p>データだけで「売れない」とは言いません。必要に応じて現地を確認した上で、可能性をお伝えします。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">03</p>
+      <h3>しつこい営業は一切なし</h3>
+      <p>一括査定のように複数社から電話がかかることはありません。1対1でLINEから対応します。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">04</p>
+      <h3>相談・査定は完全無料</h3>
+      <p>売却が成立するまで費用は発生しません。「まず話だけ聞きたい」でも大丈夫です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RISK ========== -->
+<section class="risk">
+  <h2>放置するほど、選択肢は狭まります</h2>
+  <p>
+    「いつか考えよう」が一番高くつきます。<br>
+    早めに状況を整理するだけで、結果は大きく変わります。
+  </p>
+  <ul class="risk-box">
+    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
+    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
+    <li><span class="risk-icon">!</span>相続登記の義務化（2024年〜）で放置リスクが増大</li>
+    <li><span class="risk-icon">!</span>不動産市場の変動で売却タイミングを逃す可能性</li>
+  </ul>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">費用はかかりますか？</div>
+      <div class="faq-a">相談・査定は完全無料です。売却が成立した場合のみ、通常の仲介手数料が発生します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">古い家でも本当に売れますか？</div>
+      <div class="faq-a">築年数が古くても、解体前提の土地売却やリフォーム前提の売却など方法はあります。まずは状況を聞かせてください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">遠方に住んでいますが対応できますか？</div>
+      <div class="faq-a">はい。LINEでのヒアリング後、必要に応じて現地確認を行います。遠方の方からのご相談も多いです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">まだ売るか決めてないのですが...</div>
+      <div class="faq-a">問題ありません。「まず状況を整理したい」「選択肢を知りたい」という段階でのご相談が一番多いです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">一括査定サイトとの違いは？</div>
+      <div class="faq-a">一括査定は複数社に情報が渡り大量の営業電話がかかります。私たちは1対1で、あなたの物件に合った方法を直接ご提案します。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta">
+  <h2>まずは、状況を整理するところから。</h2>
+  <p>
+    LINEで物件の状況を教えていただくだけで、<br>あなたに合った売却方法をご提案します。
+  </p>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <p><a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a></p>
+  <p style="margin-top: 8px;">&copy; 2026</p>
+</footer>
+
+<!-- ========== FLOATING CTA ========== -->
+<div class="floating-cta">
+  <a href="#" class="cta-btn">
+    <svg class="line-svg-sm" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+</div>
+
+</body>
+</html>

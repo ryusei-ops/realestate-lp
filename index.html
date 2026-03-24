@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>売れない土地の無料査定 | 再建築不可・接道なしでも対応</title>
+<style>
+  :root {
+    --black: #1a1a1a;
+    --gray: #6b7280;
+    --gray-light: #9ca3af;
+    --light: #f8f9fa;
+    --white: #fff;
+    --brown: #78350f;
+    --brown-bg: #fef3c7;
+    --dark-bg: #1c1917;
+    --dark-card: #292524;
+    --accent: #d97706;
+    --accent-light: #fef3c7;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 20px 60px;
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(217,119,6,.2);
+    border: 1px solid rgba(217,119,6,.4);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: -.01em;
+  }
+  .hero h1 strong {
+    color: var(--accent);
+    font-size: 34px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--gray-light);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .hero-tag {
+    padding: 6px 14px;
+    background: var(--dark-card);
+    border: 1px solid #44403c;
+    border-radius: 100px;
+    font-size: 13px;
+    color: #d6d3d1;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 40px;
+    background: #06c755;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(6,199,85,.4);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(6,199,85,.5);
+  }
+  .cta-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+  .cta-note {
+    font-size: 12px;
+    color: var(--gray-light);
+    margin-top: 12px;
+  }
+
+  /* ===== PAIN ===== */
+  .pain {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .pain h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .pain > p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 32px;
+  }
+  .pain-list {
+    list-style: none;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .pain-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+    color: var(--black);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.6;
+  }
+  .pain-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+
+  /* ===== SOLUTION ===== */
+  .solution {
+    padding: 64px 20px;
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+  }
+  .solution .section-label {
+    color: var(--accent);
+  }
+  .solution .section-title {
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .solution-desc {
+    font-size: 15px;
+    color: #a8a29e;
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+  .solution-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .solution-card {
+    background: var(--dark-card);
+    border: 1px solid #44403c;
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+  }
+  .solution-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+  .solution-card p {
+    font-size: 14px;
+    color: #a8a29e;
+    line-height: 1.6;
+  }
+  .solution-card-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: .04em;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    letter-spacing: -.01em;
+    line-height: 1.4;
+    color: var(--black);
+  }
+
+  /* ===== CASES ===== */
+  .cases {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .cases .section-title {
+    margin-bottom: 40px;
+  }
+  .case-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .case-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .case-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: .02em;
+  }
+  .case-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .case-detail {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+  .case-result {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  /* ===== FLOW ===== */
+  .flow {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .flow-step {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .flow-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .flow-step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .flow-step p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== WHY US ===== */
+  .why {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .why-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .why-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== RISK ===== */
+  .risk {
+    padding: 64px 20px;
+    background: #fef2f2;
+    text-align: center;
+  }
+  .risk h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    color: #991b1b;
+  }
+  .risk > p {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .risk-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .risk-box li {
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--black);
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
+  }
+  .risk-box li + li {
+    border-top: 1px solid #fecaca;
+  }
+  .risk-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: #dc2626;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .faq-list {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 0;
+  }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .faq-q::before {
+    content: 'Q';
+    flex-shrink: 0;
+    color: var(--accent);
+    font-weight: 800;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    padding-left: 22px;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    padding: 64px 20px;
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .final-cta p {
+    font-size: 15px;
+    color: #a8a29e;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .final-cta .cta-note {
+    color: #78716c;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-light);
+    background: #f3f4f6;
+  }
+  footer a {
+    color: var(--gray);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 640px) {
+    .hero { padding: 120px 40px 80px; }
+    .hero h1 { font-size: 36px; }
+    .hero h1 strong { font-size: 48px; }
+    .section-title { font-size: 28px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .solution-grid { grid-template-columns: 1fr 1fr; }
+    .flow-steps { max-width: 560px; }
+  }
+
+  /* ===== FLOATING CTA ===== */
+  .floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 20px;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+  }
+  .floating-cta .cta-btn {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  @media (min-width: 640px) {
+    .floating-cta { display: none; }
+  }
+  body { padding-bottom: 72px; }
+  @media (min-width: 640px) { body { padding-bottom: 0; } }
+
+  /* ===== LINE SVG ===== */
+  .line-svg { width: 22px; height: 22px; fill: currentColor; }
+  .line-svg-sm { width: 18px; height: 18px; fill: currentColor; }
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-badge">難あり物件専門 / 無料査定</div>
+  <h1>
+    <strong>その土地・空き家<br>売れないって諦めていませんか？</strong>
+    再建築不可・接道なし・変形地でも<br>売却できる方法があります。
+  </h1>
+  <p class="hero-sub">
+    大手が断った物件でも、専門家が現地を見て査定します。<br>
+    まずはLINEで、あなたの土地の可能性を確認してみませんか。
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">再建築不可</span>
+    <span class="hero-tag">接道義務未達</span>
+    <span class="hero-tag">不整形地</span>
+    <span class="hero-tag">崖地・傾斜地</span>
+    <span class="hero-tag">借地権付き</span>
+    <span class="hero-tag">古家付き土地</span>
+    <span class="hero-tag">共有持分</span>
+    <span class="hero-tag">相続放棄を検討中</span>
+  </div>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料査定を始める
+  </a>
+  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+</section>
+
+<!-- ========== PAIN ========== -->
+<section class="pain">
+  <h2>こんな状況で困っていませんか？</h2>
+  <p>一つでも当てはまるなら、一度ご相談ください。</p>
+  <ul class="pain-list">
+    <li><span class="pain-check"></span>不動産屋に「この土地は売れません」と断られた</li>
+    <li><span class="pain-check"></span>再建築不可と言われて、もう諦めている</li>
+    <li><span class="pain-check"></span>相続したけど使い道がなく、固定資産税だけ払い続けている</li>
+    <li><span class="pain-check"></span>接道がなくて建て替えもできない</li>
+    <li><span class="pain-check"></span>一括査定サイトに出したが、どこからも連絡が来なかった</li>
+    <li><span class="pain-check"></span>変形地・狭小地で「価値がない」と言われた</li>
+  </ul>
+</section>
+
+<!-- ========== SOLUTION ========== -->
+<section class="solution">
+  <p class="section-label">Solution</p>
+  <h2 class="section-title">大手が扱わない土地こそ、<br>私たちの専門領域です</h2>
+  <p class="solution-desc">
+    一般的な不動産会社は、売りやすい物件を優先します。<br>
+    条件が複雑な土地は後回しにされるか、断られるのが現実です。<br>
+    私たちは、そうした土地だけに特化して取り組んでいます。
+  </p>
+  <div class="solution-grid">
+    <div class="solution-card">
+      <p class="solution-card-label">再建築不可</p>
+      <h3>建て替えできなくても売れます</h3>
+      <p>リフォーム前提の買い手や、隣地所有者への売却など、再建築不可ならではのルートがあります。</p>
+    </div>
+    <div class="solution-card">
+      <p class="solution-card-label">接道義務未達</p>
+      <h3>接道がなくても方法はあります</h3>
+      <p>セットバック、隣地買い増し、位置指定道路の申請など、接道問題を解決した上での売却実績があります。</p>
+    </div>
+    <div class="solution-card">
+      <p class="solution-card-label">不整形地・狭小地</p>
+      <h3>形が悪くても価値はあります</h3>
+      <p>駐車場・資材置場・コンテナ利用など、住宅以外の活用を前提とした買い手をお繋ぎします。</p>
+    </div>
+    <div class="solution-card">
+      <p class="solution-card-label">相続・共有持分</p>
+      <h3>権利関係が複雑でも対応します</h3>
+      <p>共有者との調整、相続登記のサポートなど、売却前の整理からお手伝いします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASES ========== -->
+<section class="cases">
+  <p class="section-label">Cases</p>
+  <h2 class="section-title">こんな土地も売却できました</h2>
+  <div class="case-list">
+    <div class="case-item">
+      <p class="case-label">CASE 01 ― 再建築不可</p>
+      <h3>3社に断られた築50年の戸建て付き土地</h3>
+      <p class="case-detail">接道が1.8mで再建築不可。大手仲介に相談するも「引き受けられない」と言われ放置していた物件。隣地所有者への交渉を行い売却成立。</p>
+      <p class="case-result">放置期間3年 → 相談から2ヶ月で売却完了</p>
+    </div>
+    <div class="case-item">
+      <p class="case-label">CASE 02 ― 不整形地</p>
+      <h3>旗竿地で「値段がつかない」と言われた土地</h3>
+      <p class="case-detail">間口が2m未満の旗竿地。一括査定サイトでは0円回答。資材置場としての需要を見込み、地元事業者にマッチング。</p>
+      <p class="case-result">査定0円 → 売却額がついて成約</p>
+    </div>
+    <div class="case-item">
+      <p class="case-label">CASE 03 ― 相続</p>
+      <h3>相続した遠方の空き家、固定資産税だけ払い続けていた</h3>
+      <p class="case-detail">親から相続した地方の空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま買取業者へ売却。</p>
+      <p class="case-result">年間の税負担から解放</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FLOW ========== -->
+<section class="flow">
+  <p class="section-label">How it works</p>
+  <h2 class="section-title">ご相談の流れ</h2>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div>
+        <h3>LINEで友だち追加</h3>
+        <p>ボタンを押してLINEで友だち追加。登録は10秒で完了します。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div>
+        <h3>AIが物件情報をヒアリング</h3>
+        <p>AIチャットがエリア・面積・状況などを質問します。わかる範囲で答えるだけでOKです。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div>
+        <h3>専門スタッフが査定・ご提案</h3>
+        <p>AIのヒアリング内容をもとに、難あり物件の専門スタッフが売却方法と概算価格をご提案します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ===== -->
+<section class="why">
+  <p class="section-label">Why us</p>
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <p class="why-num">01</p>
+      <h3>難あり物件だけに特化</h3>
+      <p>再建築不可、接道なし、変形地。一般の不動産会社が敬遠する物件が専門領域です。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">02</p>
+      <h3>現地を見て判断します</h3>
+      <p>書類だけで「売れない」と判断しません。実際に現場を見た上で、売却可能性をお伝えします。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">03</p>
+      <h3>営業電話なし・秘密厳守</h3>
+      <p>一括査定サイトのようにしつこい電話は一切ありません。ご希望がない限り連絡しません。</p>
+    </div>
+    <div class="why-card">
+      <p class="why-num">04</p>
+      <h3>費用は一切かかりません</h3>
+      <p>相談・査定は完全無料です。売却が成立するまで費用は発生しません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RISK ========== -->
+<section class="risk">
+  <h2>放置し続けるとどうなるか</h2>
+  <p>
+    「いつか考えよう」と先延ばしにするほど、<br>状況は悪くなります。
+  </p>
+  <ul class="risk-box">
+    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
+    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
+    <li><span class="risk-icon">!</span>相続登記の義務化（2024年〜）で放置がさらに難しく</li>
+    <li><span class="risk-icon">!</span>近隣トラブルや管理責任のリスク</li>
+  </ul>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">本当に売れるんですか？</div>
+      <div class="faq-a">すべての物件に保証はできませんが、他社で断られた物件でも売却につながったケースは多数あります。まずは可能性があるかどうか、無料で診断します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">費用はかかりますか？</div>
+      <div class="faq-a">相談・査定は完全無料です。売却が成立した場合のみ、通常の仲介手数料が発生します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">遠方の物件でも対応できますか？</div>
+      <div class="faq-a">はい。まずはLINEでヒアリングし、必要に応じて現地確認を行います。遠方にお住まいでも対応可能です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">まだ売るか決めてないのですが...</div>
+      <div class="faq-a">まったく問題ありません。「まず今の状況を整理したい」という段階でのご相談が一番多いです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">一括査定サイトとは何が違いますか？</div>
+      <div class="faq-a">一括査定サイトは複数社に情報を送るため大量の電話がかかります。私たちは1対1で、難あり物件に特化した専門スタッフが直接対応します。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta">
+  <h2>「売れない」を「売れた」に変える<br>最初の一歩を。</h2>
+  <p>
+    LINEで状況を教えていただくだけで、<br>あなたの土地に合った売却方法をご提案します。
+  </p>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <p><a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a></p>
+  <p style="margin-top: 8px;">&copy; 2026</p>
+</footer>
+
+<!-- ========== FLOATING CTA ========== -->
+<div class="floating-cta">
+  <a href="#" class="cta-btn">
+    <svg class="line-svg-sm" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+</div>
+
+</body>
+</html>
