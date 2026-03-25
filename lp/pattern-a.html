@@ -155,6 +155,43 @@
     margin-top: 1px;
   }
 
+  /* ===== DATA ===== */
+  .data {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .data-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .data-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .data-label {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .data-note {
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--gray-light);
+  }
+
   /* ===== SOLUTION ===== */
   .solution {
     padding: 64px 20px;
@@ -541,8 +578,8 @@
     再建築不可・接道なし・変形地でも<br>売却できる方法があります。
   </h1>
   <p class="hero-sub">
-    大手が断った物件でも、専門家が現地を見て査定します。<br>
-    まずはLINEで、あなたの土地の可能性を確認してみませんか。
+    大手に断られた物件でも、専門家が現地を見て判断します。<br>
+    相談無料・初期費用ゼロ。まずはLINEで状況を教えてください。
   </p>
   <div class="hero-tags">
     <span class="hero-tag">再建築不可</span>
@@ -571,8 +608,33 @@
     <li><span class="pain-check"></span>相続したけど使い道がなく、固定資産税だけ払い続けている</li>
     <li><span class="pain-check"></span>接道がなくて建て替えもできない</li>
     <li><span class="pain-check"></span>一括査定サイトに出したが、どこからも連絡が来なかった</li>
-    <li><span class="pain-check"></span>変形地・狭小地で「価値がない」と言われた</li>
+    <li><span class="pain-check"></span>そもそも何から始めればいいかわからない</li>
   </ul>
+</section>
+
+<!-- ========== DATA ========== -->
+<section class="data">
+  <p class="section-label">Facts</p>
+  <h2 class="section-title">数字で見る、空き家問題のいま</h2>
+  <div class="data-grid">
+    <div class="data-card">
+      <p class="data-num">900万戸</p>
+      <p class="data-label">全国の空き家数（過去最多）</p>
+    </div>
+    <div class="data-card">
+      <p class="data-num">46%</p>
+      <p class="data-label">空き家のうち接道条件不良の割合</p>
+    </div>
+    <div class="data-card">
+      <p class="data-num">43.8%</p>
+      <p class="data-label">空き家所有者のうち「何もしていない」割合</p>
+    </div>
+    <div class="data-card">
+      <p class="data-num">150万件</p>
+      <p class="data-label">年間の相続登記件数（義務化で急増中）</p>
+    </div>
+  </div>
+  <p class="data-note">出典: 総務省 令和5年住宅・土地統計調査 / 法務局統計</p>
 </section>
 
 <!-- ========== SOLUTION ========== -->
@@ -649,15 +711,15 @@
     <div class="flow-step">
       <div class="flow-num">2</div>
       <div>
-        <h3>AIが物件情報をヒアリング</h3>
-        <p>AIチャットがエリア・面積・状況などを質問します。わかる範囲で答えるだけでOKです。</p>
+        <h3>LINEで状況をヒアリング</h3>
+        <p>物件のエリア・面積・状況などを質問します。わかる範囲で答えるだけでOKです。</p>
       </div>
     </div>
     <div class="flow-step">
       <div class="flow-num">3</div>
       <div>
         <h3>専門スタッフが査定・ご提案</h3>
-        <p>AIのヒアリング内容をもとに、難あり物件の専門スタッフが売却方法と概算価格をご提案します。</p>
+        <p>ヒアリング内容をもとに、難あり物件の専門スタッフが売却方法と概算価格をご提案します。</p>
       </div>
     </div>
   </div>
@@ -700,7 +762,7 @@
   <ul class="risk-box">
     <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
     <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
-    <li><span class="risk-icon">!</span>相続登記の義務化（2024年〜）で放置がさらに難しく</li>
+    <li><span class="risk-icon">!</span>相続登記が義務化済み ― 3年以内に登記しないと過料の対象に</li>
     <li><span class="risk-icon">!</span>近隣トラブルや管理責任のリスク</li>
   </ul>
 </section>
@@ -728,16 +790,17 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">一括査定サイトとは何が違いますか？</div>
-      <div class="faq-a">一括査定サイトは複数社に情報を送るため大量の電話がかかります。私たちは1対1で、難あり物件に特化した専門スタッフが直接対応します。</div>
+      <div class="faq-a">一括査定サイトは複数社に情報が渡り、大量の営業電話がかかります。さらに、再建築不可や接道なしの物件は査定依頼をしても1社も返答が来ないケースが少なくありません。私たちは1対1で、こうした難あり物件に特化した専門スタッフが直接対応します。</div>
     </div>
   </div>
 </section>
 
 <!-- ========== FINAL CTA ========== -->
 <section class="final-cta">
-  <h2>「売れない」を「売れた」に変える<br>最初の一歩を。</h2>
+  <h2>何から始めればいいか、<br>まずはそこから一緒に整理します。</h2>
   <p>
-    LINEで状況を教えていただくだけで、<br>あなたの土地に合った売却方法をご提案します。
+    LINEで状況を教えていただくだけで、<br>あなたの土地に合った売却方法をご提案します。<br>
+    初期費用ゼロ。相談だけでも構いません。
   </p>
   <a href="#" class="cta-btn">
     <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
