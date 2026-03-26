@@ -155,41 +155,61 @@
     margin-top: 1px;
   }
 
-  /* ===== DATA ===== */
-  .data {
+  /* ===== RISK ===== */
+  .risk {
     padding: 64px 20px;
-    background: var(--light);
+    background: #fef2f2;
     text-align: center;
   }
-  .data-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    max-width: 520px;
-    margin: 0 auto;
+  .risk h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    color: #991b1b;
   }
-  .data-card {
+  .risk > p {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .risk-box {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 24px 16px;
+    padding: 24px;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
     box-shadow: 0 1px 3px rgba(0,0,0,.06);
   }
-  .data-num {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1.2;
-    margin-bottom: 6px;
+  .risk-box li {
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--black);
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
   }
-  .data-label {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.5;
+  .risk-box li + li {
+    border-top: 1px solid #fecaca;
   }
-  .data-note {
-    margin-top: 24px;
+  .risk-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: #dc2626;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 11px;
-    color: var(--gray-light);
+    font-weight: 800;
+    margin-top: 1px;
   }
 
   /* ===== SOLUTION ===== */
@@ -264,10 +284,67 @@
     color: var(--black);
   }
 
+  /* ===== COMPARE ===== */
+  .compare {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .compare .section-title {
+    margin-bottom: 32px;
+  }
+  .compare-desc {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .compare-table {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    text-align: left;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-head {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 14px 12px;
+    background: #f9fafb;
+    color: var(--gray);
+  }
+  .compare-head:last-child {
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+  .compare-cell {
+    font-size: 13px;
+    padding: 14px 12px;
+    color: var(--black);
+    line-height: 1.5;
+  }
+  .compare-cell:last-child {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .compare-cell.label {
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 12px;
+  }
+
   /* ===== CASES ===== */
   .cases {
     padding: 64px 20px;
-    background: var(--light);
     text-align: center;
   }
   .cases .section-title {
@@ -281,7 +358,7 @@
     margin: 0 auto;
   }
   .case-item {
-    background: var(--white);
+    background: var(--light);
     border-radius: var(--radius);
     padding: 24px 20px;
     text-align: left;
@@ -312,6 +389,100 @@
     font-size: 14px;
     font-weight: 700;
     color: var(--black);
+  }
+
+  /* ===== VOICE ===== */
+  .voice {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .voice .section-title {
+    margin-bottom: 40px;
+  }
+  .voice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .voice-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    position: relative;
+  }
+  .voice-text {
+    font-size: 15px;
+    color: var(--black);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .voice-attr {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 600;
+  }
+
+  /* ===== INHERITANCE ===== */
+  .inheritance {
+    padding: 64px 20px;
+    background: #fffbeb;
+    text-align: center;
+  }
+  .inheritance .section-title {
+    margin-bottom: 16px;
+    color: var(--brown);
+  }
+  .inheritance-desc {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+  }
+  .inheritance-box {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .inheritance-point {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .inheritance-point h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--brown);
+  }
+  .inheritance-point p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+  .inheritance-highlight {
+    background: var(--accent-light);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 20px;
+    max-width: 520px;
+    margin: 32px auto 0;
+    text-align: center;
+  }
+  .inheritance-highlight p {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.6;
   }
 
   /* ===== FLOW ===== */
@@ -359,103 +530,10 @@
     line-height: 1.6;
   }
 
-  /* ===== WHY US ===== */
-  .why {
-    padding: 64px 20px;
-    background: var(--light);
-    text-align: center;
-  }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .why-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 28px 24px;
-    text-align: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .why-num {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-  .why-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .why-card p {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-
-  /* ===== RISK ===== */
-  .risk {
-    padding: 64px 20px;
-    background: #fef2f2;
-    text-align: center;
-  }
-  .risk h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.5;
-    color: #991b1b;
-  }
-  .risk > p {
-    font-size: 15px;
-    color: var(--gray);
-    max-width: 520px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-  }
-  .risk-box {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 24px;
-    max-width: 520px;
-    margin: 0 auto;
-    text-align: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .risk-box li {
-    padding: 10px 0;
-    font-size: 14px;
-    color: var(--black);
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.6;
-  }
-  .risk-box li + li {
-    border-top: 1px solid #fecaca;
-  }
-  .risk-icon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    background: #dc2626;
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 800;
-    margin-top: 1px;
-  }
-
   /* ===== FAQ ===== */
   .faq {
     padding: 64px 20px;
+    background: var(--light);
     text-align: center;
   }
   .faq-list {
@@ -530,7 +608,6 @@
     .hero h1 { font-size: 36px; }
     .hero h1 strong { font-size: 48px; }
     .section-title { font-size: 28px; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
     .solution-grid { grid-template-columns: 1fr 1fr; }
     .flow-steps { max-width: 560px; }
   }
@@ -584,12 +661,12 @@
   <div class="hero-tags">
     <span class="hero-tag">再建築不可</span>
     <span class="hero-tag">接道義務未達</span>
-    <span class="hero-tag">不整形地</span>
     <span class="hero-tag">崖地・傾斜地</span>
+    <span class="hero-tag">不整形地</span>
     <span class="hero-tag">借地権付き</span>
     <span class="hero-tag">古家付き土地</span>
     <span class="hero-tag">共有持分</span>
-    <span class="hero-tag">相続放棄を検討中</span>
+    <span class="hero-tag">相続物件</span>
   </div>
   <a href="#" class="cta-btn">
     <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
@@ -612,29 +689,19 @@
   </ul>
 </section>
 
-<!-- ========== DATA ========== -->
-<section class="data">
-  <p class="section-label">Facts</p>
-  <h2 class="section-title">数字で見る、空き家問題のいま</h2>
-  <div class="data-grid">
-    <div class="data-card">
-      <p class="data-num">900万戸</p>
-      <p class="data-label">全国の空き家数（過去最多）</p>
-    </div>
-    <div class="data-card">
-      <p class="data-num">46%</p>
-      <p class="data-label">空き家のうち接道条件不良の割合</p>
-    </div>
-    <div class="data-card">
-      <p class="data-num">43.8%</p>
-      <p class="data-label">空き家所有者のうち「何もしていない」割合</p>
-    </div>
-    <div class="data-card">
-      <p class="data-num">150万件</p>
-      <p class="data-label">年間の相続登記件数（義務化で急増中）</p>
-    </div>
-  </div>
-  <p class="data-note">出典: 総務省 令和5年住宅・土地統計調査 / 法務局統計</p>
+<!-- ========== RISK ========== -->
+<section class="risk">
+  <h2>売れない土地を放置すると<br>どうなるか</h2>
+  <p>
+    「いつか考えよう」と先延ばしにするほど、<br>状況は悪くなります。
+  </p>
+  <ul class="risk-box">
+    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
+    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
+    <li><span class="risk-icon">!</span>相続人が増え、権利関係がさらに複雑化</li>
+    <li><span class="risk-icon">!</span>管理放棄による近隣トラブル・損害賠償リスク</li>
+    <li><span class="risk-icon">!</span>不動産市場の変動で売却タイミングを逃す</li>
+  </ul>
 </section>
 
 <!-- ========== SOLUTION ========== -->
@@ -670,6 +737,44 @@
   </div>
 </section>
 
+<!-- ========== COMPARE ========== -->
+<section class="compare">
+  <p class="section-label">Difference</p>
+  <h2 class="section-title">大手・仲介との違い</h2>
+  <div class="compare-table">
+    <div class="compare-row">
+      <div class="compare-head"></div>
+      <div class="compare-head">大手・一括査定</div>
+      <div class="compare-head">私たち</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">取引形態</div>
+      <div class="compare-cell">仲介（買い手探し）</div>
+      <div class="compare-cell">直接買取</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">仲介手数料</div>
+      <div class="compare-cell">売却額の3%+6万円</div>
+      <div class="compare-cell">ゼロ</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">対応物件</div>
+      <div class="compare-cell">売りやすい物件中心</div>
+      <div class="compare-cell">難あり物件に特化</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">スピード</div>
+      <div class="compare-cell">数ヶ月〜売れない</div>
+      <div class="compare-cell">最短で即日査定</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">営業</div>
+      <div class="compare-cell">複数社から電話</div>
+      <div class="compare-cell">1対1、LINE完結</div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== CASES ========== -->
 <section class="cases">
   <p class="section-label">Cases</p>
@@ -693,6 +798,54 @@
       <p class="case-detail">親から相続した地方の空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま直接買取。</p>
       <p class="case-result">年間の税負担から解放</p>
     </div>
+  </div>
+</section>
+
+<!-- ========== VOICE ========== -->
+<section class="voice">
+  <p class="section-label">Voice</p>
+  <h2 class="section-title">お客様の声</h2>
+  <div class="voice-list">
+    <div class="voice-item">
+      <p class="voice-text">「3社に断られて途方に暮れていました。LINEで相談したら翌日には現地を見に来てくれて、1ヶ月後には買取が決まりました。もっと早く相談すればよかったです。」</p>
+      <p class="voice-attr">60代男性 / 再建築不可の戸建て</p>
+    </div>
+    <div class="voice-item">
+      <p class="voice-text">「相続した崖地で、固定資産税だけ5年間払っていました。まさか買い取ってもらえるとは思っていなかったので驚きです。」</p>
+      <p class="voice-attr">50代女性 / 相続した崖地</p>
+    </div>
+    <div class="voice-item">
+      <p class="voice-text">「一括査定では1社も返答がなかった土地。直接買取で仲介手数料もかからず、手残りが思ったより多くて助かりました。」</p>
+      <p class="voice-attr">40代男性 / 接道なしの空き地</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INHERITANCE ========== -->
+<section class="inheritance">
+  <p class="section-label">Important</p>
+  <h2 class="section-title">相続登記の義務化、<br>ご存知ですか？</h2>
+  <p class="inheritance-desc">
+    2024年4月1日から、相続登記が義務化されました。<br>
+    相続を知った日から<strong>3年以内</strong>に登記しないと、<br>
+    <strong>10万円以下の過料</strong>の対象になります。
+  </p>
+  <div class="inheritance-box">
+    <div class="inheritance-point">
+      <h3>過去の相続も対象です</h3>
+      <p>義務化以前に発生した相続も遡って対象になります。2027年3月末までに登記が必要です。</p>
+    </div>
+    <div class="inheritance-point">
+      <h3>放置するほど複雑化します</h3>
+      <p>相続人が亡くなれば、その子どもに権利が分散。代を重ねるごとに関係者が増え、合意形成がさらに困難になります。</p>
+    </div>
+    <div class="inheritance-point">
+      <h3>登記前でもご相談ください</h3>
+      <p>相続登記がまだの物件でも、買取のご相談は可能です。登記手続きのサポートも行っています。</p>
+    </div>
+  </div>
+  <div class="inheritance-highlight">
+    <p>「相続した土地をどうすればいいかわからない」<br>その段階でのご相談が一番多いです。</p>
   </div>
 </section>
 
@@ -723,48 +876,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ========== WHY US ===== -->
-<section class="why">
-  <p class="section-label">Why us</p>
-  <h2 class="section-title">選ばれる理由</h2>
-  <div class="why-grid">
-    <div class="why-card">
-      <p class="why-num">01</p>
-      <h3>難あり物件を直接買取</h3>
-      <p>再建築不可、接道なし、崖地・傾斜地。大手が敬遠する物件を私たちが直接買い取ります。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">02</p>
-      <h3>現地を見て判断します</h3>
-      <p>書類だけで「買えない」と判断しません。実際に現場を見た上で、買取価格をお伝えします。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">03</p>
-      <h3>仲介手数料ゼロ</h3>
-      <p>仲介ではなく直接買取なので、仲介手数料は一切かかりません。査定・相談も無料です。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">04</p>
-      <h3>スピード対応</h3>
-      <p>買い手を探す必要がないため、最短で即日査定・スピード買取が可能です。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== RISK ========== -->
-<section class="risk">
-  <h2>放置し続けるとどうなるか</h2>
-  <p>
-    「いつか考えよう」と先延ばしにするほど、<br>状況は悪くなります。
-  </p>
-  <ul class="risk-box">
-    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
-    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
-    <li><span class="risk-icon">!</span>相続登記が義務化済み ― 3年以内に登記しないと過料の対象に</li>
-    <li><span class="risk-icon">!</span>近隣トラブルや管理責任のリスク</li>
-  </ul>
 </section>
 
 <!-- ========== FAQ ========== -->
