@@ -640,6 +640,77 @@
   body { padding-bottom: 72px; }
   @media (min-width: 640px) { body { padding-bottom: 0; } }
 
+  /* ===== REASON ===== */
+  .reason {
+    padding: 64px 20px;
+    text-align: center;
+  }
+  .reason .section-title {
+    margin-bottom: 40px;
+  }
+  .reason-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .reason-card {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+  }
+  .reason-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .reason-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .reason-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ===== AREA ===== */
+  .area {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .area .section-title {
+    margin-bottom: 24px;
+  }
+  .area-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .area-tag {
+    padding: 8px 18px;
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .area-note {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 16px;
+  }
+
   /* ===== HERO STATS ===== */
   .hero-stats {
     display: flex;
@@ -767,6 +838,28 @@
   </div>
 </section>
 
+<!-- ========== REASON ========== -->
+<section class="reason">
+  <h2 class="section-title">なぜ、大手が断った物件を<br>買い取れるのか</h2>
+  <div class="reason-grid">
+    <div class="reason-card">
+      <p class="reason-num">01</p>
+      <h3>自社で直接買い取るから</h3>
+      <p>仲介のように買い手を探す必要がありません。自社で買い取るため、条件が複雑でもスピーディーに対応できます。</p>
+    </div>
+    <div class="reason-card">
+      <p class="reason-num">02</p>
+      <h3>独自の再生・活用ノウハウ</h3>
+      <p>再建築不可でもリノベーション、崖地でも造成、接道なしでも隣地活用。物件ごとに最適な活用方法を見極めた上で買い取ります。</p>
+    </div>
+    <div class="reason-card">
+      <p class="reason-num">03</p>
+      <h3>士業との連携体制</h3>
+      <p>司法書士・弁護士と連携し、相続登記や共有持分の整理など法的な問題もワンストップで対応。買取前の障壁を私たちが取り除きます。</p>
+    </div>
+  </div>
+</section>
+
 <!-- ========== COMPARE ========== -->
 <section class="compare">
   <h2 class="section-title">大手・仲介との違い</h2>
@@ -809,22 +902,22 @@
   <h2 class="section-title">こんな土地も買い取りました</h2>
   <div class="case-list">
     <div class="case-item">
-      <p class="case-label">CASE 01 ― 再建築不可</p>
+      <p class="case-label">CASE 01 ― 再建築不可 / 千葉県四街道市</p>
       <h3>3社に断られた築50年の戸建て付き土地</h3>
-      <p class="case-detail">接道が1.8mで再建築不可。大手仲介に相談するも「引き受けられない」と言われ放置していた物件。現地確認の上、直接買い取り。</p>
-      <p class="case-result">放置期間3年 → 相談から2ヶ月で買取完了</p>
+      <p class="case-detail">接道が1.8mで再建築不可。大手仲介に相談するも「引き受けられない」と言われ3年放置していた物件。現地確認の上、直接買い取り。</p>
+      <p class="case-result">他社査定0円 → 買取額 280万円（相談から2ヶ月で完了）</p>
     </div>
     <div class="case-item">
-      <p class="case-label">CASE 02 ― 崖地・傾斜地</p>
+      <p class="case-label">CASE 02 ― 崖地・傾斜地 / 神奈川県小田原市</p>
       <h3>傾斜がきつく「値段がつかない」と言われた土地</h3>
       <p class="case-detail">急傾斜地で一括査定サイトでは0円回答。現地を確認し、造成・活用の可能性を踏まえて買取価格を提示。</p>
-      <p class="case-result">査定0円 → 買取価格がついて成約</p>
+      <p class="case-result">他社査定0円 → 買取額 150万円</p>
     </div>
     <div class="case-item">
-      <p class="case-label">CASE 03 ― 相続</p>
+      <p class="case-label">CASE 03 ― 相続 / 埼玉県飯能市</p>
       <h3>相続した遠方の空き家、固定資産税だけ払い続けていた</h3>
-      <p class="case-detail">親から相続した地方の空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま直接買取。</p>
-      <p class="case-result">年間の税負担から解放</p>
+      <p class="case-detail">親から相続した空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま直接買取。</p>
+      <p class="case-result">買取額 320万円（年間の税負担から解放）</p>
     </div>
   </div>
 </section>
@@ -866,6 +959,21 @@
     LINEで無料相談する
   </a>
   <p class="cta-note">相談無料 / 営業電話なし</p>
+</section>
+
+<!-- ========== AREA ========== -->
+<section class="area">
+  <h2 class="section-title">対応エリア</h2>
+  <div class="area-list">
+    <span class="area-tag">東京都</span>
+    <span class="area-tag">神奈川県</span>
+    <span class="area-tag">千葉県</span>
+    <span class="area-tag">埼玉県</span>
+    <span class="area-tag">茨城県</span>
+    <span class="area-tag">栃木県</span>
+    <span class="area-tag">群馬県</span>
+  </div>
+  <p class="area-note">関東エリアを中心に対応しています。その他のエリアもまずはご相談ください。</p>
 </section>
 
 <!-- ========== FLOW ========== -->
