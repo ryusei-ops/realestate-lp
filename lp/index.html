@@ -713,6 +713,117 @@
     line-height: 1.7;
   }
 
+  /* ===== REPRESENTATIVE ===== */
+  .representative {
+    padding: 72px 20px;
+    background: var(--white);
+    text-align: center;
+  }
+  .rep-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    text-align: left;
+    border: 1px solid #eee;
+  }
+  .rep-profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .rep-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .rep-info h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  .rep-info .rep-title {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 600;
+  }
+  .rep-info .rep-company {
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .rep-message {
+    font-size: 15px;
+    color: var(--black);
+    line-height: 2;
+    margin-bottom: 24px;
+  }
+  .rep-message p + p {
+    margin-top: 16px;
+  }
+  .rep-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .rep-badge {
+    padding: 6px 14px;
+    background: var(--white);
+    border: 1px solid var(--gold-light);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ===== COMPANY ===== */
+  .company {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .company-table {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+  }
+  .company-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    border-bottom: 1px solid #eee;
+  }
+  .company-row:last-child { border-bottom: none; }
+  .company-label {
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    background: rgba(26,39,68,.03);
+  }
+  .company-value {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--black);
+    line-height: 1.6;
+  }
+
   /* ===== AREA ===== */
   .area {
     padding: 64px 20px;
@@ -1234,6 +1345,70 @@
     LINEで無料相談する
   </a>
   <p class="cta-note cta-note--dark">相談無料 / 営業電話なし</p>
+</section>
+
+<!-- ========== REPRESENTATIVE ========== -->
+<section class="representative">
+  <p class="section-label fade-in">Message</p>
+  <h2 class="section-title fade-in">代表あいさつ</h2>
+  <div class="rep-card fade-in">
+    <div class="rep-profile">
+      <div class="rep-photo">KT</div>
+      <div class="rep-info">
+        <h3>内田 大晴</h3>
+        <p class="rep-title">代表取締役 / 宅地建物取引士</p>
+        <p class="rep-company">KTエステート株式会社</p>
+      </div>
+    </div>
+    <div class="rep-message">
+      <p>「売れない」と言われた土地を、私たちは数多く買い取ってきました。</p>
+      <p>大手の不動産会社は、売りやすい物件を優先します。再建築不可、接道なし、崖地 ―― こうした条件の土地は、相談しても断られるか、後回しにされるのが現実です。</p>
+      <p>私自身、造成工事の現場に立ち、崖地や傾斜地を宅地として再生する仕事を続けてきました。だからこそ、他社が「値段がつかない」と判断した土地にも、活用の道が見えます。</p>
+      <p>「まず話を聞いてほしい」。それだけで構いません。LINEでお気軽にご相談ください。</p>
+    </div>
+    <div class="rep-credentials">
+      <span class="rep-badge">宅地建物取引士</span>
+      <span class="rep-badge">不動産事業</span>
+      <span class="rep-badge">造成事業</span>
+      <span class="rep-badge">東京都知事免許</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPANY ========== -->
+<section class="company">
+  <p class="section-label fade-in">Company</p>
+  <h2 class="section-title fade-in">会社概要</h2>
+  <div class="company-table fade-in">
+    <div class="company-row">
+      <div class="company-label">会社名</div>
+      <div class="company-value">KTエステート株式会社</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">代表者</div>
+      <div class="company-value">内田 大晴</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">免許番号</div>
+      <div class="company-value">東京都知事(1) 第113342号</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">事業内容</div>
+      <div class="company-value">不動産事業 / 造成事業</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">所在地</div>
+      <div class="company-value">〒192-0061<br>東京都八王子市平岡町15-14<br>明光ビル3F</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">TEL</div>
+      <div class="company-value">042-634-9508</div>
+    </div>
+    <div class="company-row">
+      <div class="company-label">E-mail</div>
+      <div class="company-value">info@ktestate.jp</div>
+    </div>
+  </div>
 </section>
 
 <!-- ========== INHERITANCE ========== -->
