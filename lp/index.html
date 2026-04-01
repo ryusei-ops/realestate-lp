@@ -3,92 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>売れない土地の無料査定 | 再建築不可・接道なしでも対応</title>
+<title>売れない土地を直接買取 | 再建築不可・接道なし・崖地でも対応</title>
+<meta name="description" content="再建築不可・接道なし・崖地など、大手に断られた土地や空き家を直接買い取ります。仲介手数料ゼロ・相談無料。まずはLINEでご相談ください。">
+<meta property="og:title" content="売れない土地を直接買取 | 再建築不可・接道なし・崖地でも対応">
+<meta property="og:description" content="大手に断られた難あり物件を直接買取。仲介手数料ゼロ・初期費用ゼロ。LINEで無料相談。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1a2744">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Noto+Sans+JP:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
+    --navy: #1a2744;
+    --navy-deep: #0f1a2e;
+    --navy-light: #2c3e6b;
+    --gold: #c8952e;
+    --gold-light: #f5e6c8;
+    --gold-bg: #faf6ee;
     --black: #1a1a1a;
     --gray: #6b7280;
     --gray-light: #9ca3af;
     --light: #f8f9fa;
     --white: #fff;
-    --brown: #78350f;
-    --brown-bg: #fef3c7;
-    --dark-bg: #1c1917;
-    --dark-card: #292524;
-    --accent: #d97706;
-    --accent-light: #fef3c7;
+    --line-green: #06c755;
+    --line-green-hover: #05b04a;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
     --radius: 12px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+    --transition: .3s cubic-bezier(.4,0,.2,1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     color: var(--black);
     background: var(--white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .num {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* ===== SCROLL ANIMATION ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-1 { transition-delay: .1s; }
+  .stagger-2 { transition-delay: .2s; }
+  .stagger-3 { transition-delay: .3s; }
+  .stagger-4 { transition-delay: .4s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: .01em;
+    line-height: 1.5;
+    color: var(--black);
+  }
+  .section-subtitle {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 36px;
+    line-height: 1.7;
   }
 
   /* ===== HERO ===== */
   .hero {
-    padding: 80px 20px 60px;
-    background: var(--dark-bg);
+    position: relative;
+    padding: 88px 20px 72px;
+    background: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 40%, var(--navy-light) 100%);
     color: var(--white);
     text-align: center;
+    overflow: hidden;
   }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(200,149,46,.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(200,149,46,.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
   .hero-badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: rgba(217,119,6,.2);
-    border: 1px solid rgba(217,119,6,.4);
+    padding: 6px 18px;
+    background: rgba(200,149,46,.15);
+    border: 1px solid rgba(200,149,46,.35);
     border-radius: 100px;
     font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: .02em;
-    margin-bottom: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: .06em;
+    margin-bottom: 28px;
   }
   .hero h1 {
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.4;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.45;
     margin-bottom: 20px;
-    letter-spacing: -.01em;
+    letter-spacing: .02em;
   }
   .hero h1 strong {
-    color: var(--accent);
-    font-size: 34px;
+    color: var(--gold);
+    font-size: 32px;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    line-height: 1.35;
   }
   .hero-sub {
-    font-size: 15px;
-    color: var(--gray-light);
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
     margin-bottom: 32px;
-    line-height: 1.8;
+    line-height: 1.9;
   }
-  .hero-tags {
+
+  .hero-stats {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    margin-bottom: 32px;
+    gap: 16px;
+    margin-bottom: 36px;
   }
-  .hero-tag {
-    padding: 6px 14px;
-    background: var(--dark-card);
-    border: 1px solid #44403c;
-    border-radius: 100px;
-    font-size: 13px;
-    color: #d6d3d1;
+  .hero-stat {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius);
+    padding: 14px 12px;
+    min-width: 90px;
+    text-align: center;
   }
+  .hero-stat .num {
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .hero-stat .unit {
+    font-size: 11px;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .02em;
+  }
+
+  /* CTA Button */
   .cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 16px 40px;
-    background: #06c755;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 44px;
+    background: var(--line-green);
     color: var(--white);
     text-decoration: none;
     font-size: 17px;
@@ -96,39 +204,65 @@
     border-radius: 100px;
     border: none;
     cursor: pointer;
-    transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 4px 20px rgba(6,199,85,.4);
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 4px 24px rgba(6,199,85,.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(6,199,85,.4);
+    animation: cta-pulse 2.5s infinite;
+  }
+  @keyframes cta-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(6,199,85,.4); }
+    70% { box-shadow: 0 0 0 14px rgba(6,199,85,0); }
+    100% { box-shadow: 0 0 0 0 rgba(6,199,85,0); }
   }
   .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(6,199,85,.5);
+    box-shadow: 0 6px 32px rgba(6,199,85,.45);
+    background: var(--line-green-hover);
   }
-  .cta-btn svg {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
+
+  .cta-micro {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: .04em;
   }
   .cta-note {
     font-size: 12px;
+    color: rgba(255,255,255,.45);
+    margin-top: 14px;
+  }
+  .cta-note--dark {
     color: var(--gray-light);
-    margin-top: 12px;
+  }
+
+  /* Hero Wave */
+  .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    line-height: 0;
+  }
+  .hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 48px;
   }
 
   /* ===== PAIN ===== */
   .pain {
-    padding: 64px 20px;
+    padding: 72px 20px 64px;
     text-align: center;
-  }
-  .pain h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-  .pain > p {
-    font-size: 14px;
-    color: var(--gray);
-    margin-bottom: 32px;
   }
   .pain-list {
     list-style: none;
@@ -137,275 +271,63 @@
     text-align: left;
   }
   .pain-list li {
-    padding: 16px 0;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
     font-size: 15px;
     color: var(--black);
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    line-height: 1.6;
-  }
-  .pain-check {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border: 2px solid #d1d5db;
-    border-radius: 4px;
-    margin-top: 1px;
-  }
-
-  /* ===== SOLUTION ===== */
-  .solution {
-    padding: 64px 20px;
-    background: var(--dark-bg);
-    color: var(--white);
-    text-align: center;
-  }
-  .solution .section-label {
-    color: var(--accent);
-  }
-  .solution .section-title {
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-  .solution-desc {
-    font-size: 15px;
-    color: #a8a29e;
-    max-width: 520px;
-    margin: 0 auto 48px;
-    line-height: 1.8;
-  }
-  .solution-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .solution-card {
-    background: var(--dark-card);
-    border: 1px solid #44403c;
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    text-align: left;
-  }
-  .solution-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: var(--white);
-  }
-  .solution-card p {
-    font-size: 14px;
-    color: #a8a29e;
-    line-height: 1.6;
-  }
-  .solution-card-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 10px;
-    letter-spacing: .04em;
-  }
-
-  /* ===== SECTION COMMON ===== */
-  .section-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .section-title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 48px;
-    letter-spacing: -.01em;
-    line-height: 1.4;
-    color: var(--black);
-  }
-
-  /* ===== CASES ===== */
-  .cases {
-    padding: 64px 20px;
-    background: var(--light);
-    text-align: center;
-  }
-  .cases .section-title {
-    margin-bottom: 40px;
-  }
-  .case-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .case-item {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    text-align: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .case-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 8px;
-    letter-spacing: .02em;
-  }
-  .case-item h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-  .case-detail {
-    font-size: 14px;
-    color: var(--gray);
     line-height: 1.7;
   }
-  .case-result {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #e5e7eb;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--black);
-  }
-
-  /* ===== FLOW ===== */
-  .flow {
-    padding: 64px 20px;
-    text-align: center;
-  }
-  .flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .flow-step {
-    background: var(--light);
-    border-radius: var(--radius);
-    padding: 28px 24px;
-    text-align: left;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .flow-num {
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    background: var(--accent-light);
-    color: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .flow-step h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-  .flow-step p {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-
-  /* ===== WHY US ===== */
-  .why {
-    padding: 64px 20px;
-    background: var(--light);
-    text-align: center;
-  }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .why-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 28px 24px;
-    text-align: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .why-num {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-  .why-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .why-card p {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.6;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    margin-top: 2px;
   }
 
   /* ===== RISK ===== */
   .risk {
     padding: 64px 20px;
-    background: #fef2f2;
+    background: var(--red-bg);
     text-align: center;
+    position: relative;
   }
-  .risk h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.5;
+  .risk .section-title {
     color: #991b1b;
-  }
-  .risk > p {
-    font-size: 15px;
-    color: var(--gray);
-    max-width: 520px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
   }
   .risk-box {
     background: var(--white);
-    border-radius: var(--radius);
-    padding: 24px;
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
     max-width: 520px;
     margin: 0 auto;
     text-align: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(220,38,38,.08);
   }
   .risk-box li {
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 14px;
     color: var(--black);
     list-style: none;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    line-height: 1.6;
+    gap: 12px;
+    line-height: 1.7;
   }
   .risk-box li + li {
-    border-top: 1px solid #fecaca;
+    border-top: 1px solid #fee2e2;
   }
   .risk-icon {
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    background: #dc2626;
+    width: 22px;
+    height: 22px;
+    background: var(--red);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -413,12 +335,493 @@
     justify-content: center;
     font-size: 11px;
     font-weight: 800;
-    margin-top: 1px;
+    margin-top: 2px;
+  }
+
+  /* ===== SOLUTION ===== */
+  .solution {
+    padding: 72px 20px;
+    background: linear-gradient(170deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .solution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,149,46,.3), transparent);
+  }
+  .solution .section-label { color: var(--gold); }
+  .solution .section-title { color: var(--white); }
+  .solution-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+    max-width: 520px;
+    margin: 0 auto 44px;
+    line-height: 1.9;
+  }
+  .solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .solution-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: left;
+    transition: transform var(--transition), border-color var(--transition), background var(--transition);
+  }
+  .solution-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(200,149,46,.25);
+    background: rgba(255,255,255,.08);
+  }
+  .solution-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--white);
+  }
+  .solution-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.5;
+  }
+
+  /* Solution Waves */
+  .solution-wave-top {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    line-height: 0;
+    z-index: 2;
+  }
+  .solution-wave-top svg {
+    display: block;
+    width: 100%;
+    height: 40px;
+    transform: rotate(180deg);
+  }
+  .solution-wave-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    line-height: 0;
+    z-index: 2;
+  }
+  .solution-wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 40px;
+  }
+
+  /* ===== REASON ===== */
+  .reason {
+    padding: 72px 20px;
+    text-align: center;
+  }
+  .reason-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .reason-card {
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: left;
+    transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid transparent;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold-light);
+  }
+  .reason-num {
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .reason-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .reason-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+
+  /* ===== COMPARE ===== */
+  .compare {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .compare-table {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    text-align: left;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #eee;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-head {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 16px 12px;
+    background: #f9fafb;
+    color: var(--gray);
+  }
+  .compare-head:last-child {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--gold);
+  }
+  .compare-cell {
+    font-size: 13px;
+    padding: 14px 12px;
+    color: var(--black);
+    line-height: 1.5;
+  }
+  .compare-cell:last-child {
+    font-weight: 600;
+    color: var(--navy);
+    background: rgba(26,39,68,.02);
+  }
+  .compare-cell.label {
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 12px;
+  }
+
+  /* ===== CASES ===== */
+  .cases {
+    padding: 72px 20px;
+    text-align: center;
+  }
+  .case-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .case-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #eee;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .case-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .case-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: .04em;
+  }
+  .case-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .case-detail {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+  .case-result {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-light);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  /* ===== MID CTA ===== */
+  .mid-cta {
+    padding: 48px 20px;
+    text-align: center;
+    background: var(--gold-bg);
+  }
+  .mid-cta p {
+    font-size: 15px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  /* ===== VOICE ===== */
+  .voice {
+    padding: 72px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .voice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .voice-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #eee;
+    position: relative;
+  }
+  .voice-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 36px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 0 0 2px 2px;
+  }
+  .voice-quote {
+    font-size: 32px;
+    font-family: "Montserrat", serif;
+    color: var(--gold);
+    opacity: .3;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .voice-text {
+    font-size: 15px;
+    color: var(--black);
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+  .voice-attr {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .voice-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===== INHERITANCE ===== */
+  .inheritance {
+    padding: 72px 20px;
+    background: var(--gold-bg);
+    text-align: center;
+  }
+  .inheritance .section-title {
+    color: var(--navy);
+  }
+  .inheritance-desc {
+    font-size: 14px;
+    color: var(--gray);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.9;
+  }
+  .inheritance-box {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .inheritance-point {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+  }
+  .inheritance-point h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+  .inheritance-point p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+  .inheritance-highlight {
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    max-width: 520px;
+    margin: 32px auto 0;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+  }
+  .inheritance-highlight p {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  /* ===== AREA ===== */
+  .area {
+    padding: 64px 20px;
+    background: var(--light);
+    text-align: center;
+  }
+  .area-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .area-tag {
+    padding: 10px 20px;
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: all var(--transition);
+  }
+  .area-tag:hover {
+    border-color: var(--gold);
+    background: var(--gold-bg);
+  }
+  .area-note {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 16px;
+  }
+
+  /* ===== FLOW ===== */
+  .flow {
+    padding: 72px 20px;
+    text-align: center;
+  }
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .flow-step {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #eee;
+    margin-bottom: -1px;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .flow-step:first-child { border-radius: var(--radius-lg) var(--radius-lg) 4px 4px; }
+  .flow-step:last-child { border-radius: 4px 4px var(--radius-lg) var(--radius-lg); margin-bottom: 0; }
+  .flow-step:not(:first-child):not(:last-child) { border-radius: 4px; }
+  .flow-step:hover {
+    z-index: 2;
+    transform: scale(1.01);
+    box-shadow: var(--shadow-md);
+  }
+  .flow-connector {
+    display: flex;
+    justify-content: center;
+    padding: 2px 0;
+    position: relative;
+    z-index: 0;
+  }
+  .flow-connector svg {
+    width: 24px;
+    height: 16px;
+    color: var(--gold);
+  }
+  .flow-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .flow-step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .flow-step p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
   }
 
   /* ===== FAQ ===== */
   .faq {
-    padding: 64px 20px;
+    padding: 72px 20px;
+    background: var(--light);
     text-align: center;
   }
   .faq-list {
@@ -428,74 +831,87 @@
   }
   .faq-item {
     border-bottom: 1px solid #e5e7eb;
-    padding: 20px 0;
+    padding: 22px 0;
   }
+  .faq-item:last-child { border-bottom: none; }
   .faq-q {
     font-size: 15px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    line-height: 1.6;
   }
-  .faq-q::before {
-    content: 'Q';
+  .faq-q-badge {
     flex-shrink: 0;
-    color: var(--accent);
+    width: 26px;
+    height: 26px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
     font-weight: 800;
+    margin-top: 1px;
   }
   .faq-a {
     font-size: 14px;
     color: var(--gray);
-    line-height: 1.7;
-    padding-left: 22px;
+    line-height: 1.8;
+    padding-left: 36px;
   }
 
   /* ===== FINAL CTA ===== */
   .final-cta {
-    padding: 64px 20px;
-    background: var(--dark-bg);
+    padding: 80px 20px;
+    background: linear-gradient(170deg, var(--navy-deep) 0%, var(--navy) 100%);
     color: var(--white);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,149,46,.4), transparent);
   }
   .final-cta h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .final-cta > p {
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
     margin-bottom: 12px;
-    line-height: 1.4;
-  }
-  .final-cta p {
-    font-size: 15px;
-    color: #a8a29e;
-    margin-bottom: 32px;
-    line-height: 1.7;
-  }
-  .final-cta .cta-note {
-    color: #78716c;
+    line-height: 1.8;
   }
 
   /* ===== FOOTER ===== */
   footer {
-    padding: 32px 20px;
+    padding: 36px 20px;
     text-align: center;
     font-size: 12px;
     color: var(--gray-light);
-    background: #f3f4f6;
+    background: var(--navy-deep);
   }
   footer a {
-    color: var(--gray);
+    color: rgba(255,255,255,.45);
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 10px;
+    transition: color var(--transition);
   }
-
-  /* ===== RESPONSIVE ===== */
-  @media (min-width: 640px) {
-    .hero { padding: 120px 40px 80px; }
-    .hero h1 { font-size: 36px; }
-    .hero h1 strong { font-size: 48px; }
-    .section-title { font-size: 28px; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .solution-grid { grid-template-columns: 1fr 1fr; }
-    .flow-steps { max-width: 560px; }
+  footer a:hover { color: var(--gold); }
+  footer .copy {
+    margin-top: 10px;
+    color: rgba(255,255,255,.25);
   }
 
   /* ===== FLOATING CTA ===== */
@@ -504,261 +920,511 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 12px 20px;
-    background: rgba(255,255,255,.95);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid #e5e7eb;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(0,0,0,.06);
     text-align: center;
     z-index: 100;
     display: flex;
     justify-content: center;
+    transform: translateY(100%);
+    transition: transform .4s cubic-bezier(.4,0,.2,1);
   }
+  .floating-cta.show { transform: translateY(0); }
   .floating-cta .cta-btn {
     width: 100%;
     max-width: 360px;
     justify-content: center;
-    padding: 14px 24px;
+    padding: 15px 24px;
     font-size: 15px;
   }
-  @media (min-width: 640px) {
+  .floating-cta .cta-btn::after { display: none; }
+  @media (min-width: 768px) {
     .floating-cta { display: none; }
   }
   body { padding-bottom: 72px; }
-  @media (min-width: 640px) { body { padding-bottom: 0; } }
+  @media (min-width: 768px) { body { padding-bottom: 0; } }
 
   /* ===== LINE SVG ===== */
-  .line-svg { width: 22px; height: 22px; fill: currentColor; }
+  .line-svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
   .line-svg-sm { width: 18px; height: 18px; fill: currentColor; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 640px) {
+    .hero { padding: 120px 40px 88px; }
+    .hero h1 { font-size: 34px; }
+    .hero h1 strong { font-size: 44px; }
+    .hero-stat .num { font-size: 30px; }
+    .section-title { font-size: 28px; }
+    .solution-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .reason-grid { grid-template-columns: 1fr 1fr; }
+    .flow-steps { max-width: 560px; }
+  }
+  @media (min-width: 768px) {
+    .hero { padding: 140px 40px 100px; }
+    .hero h1 { font-size: 38px; }
+    .hero h1 strong { font-size: 50px; }
+    .section-title { font-size: 30px; }
+  }
 </style>
 </head>
 <body>
 
+<main>
 <!-- ========== HERO ========== -->
-<section class="hero">
-  <div class="hero-badge">難あり物件専門 / 無料査定</div>
-  <h1>
-    <strong>その土地・空き家<br>売れないって諦めていませんか？</strong>
-    再建築不可・接道なし・変形地でも<br>売却できる方法があります。
+<section class="hero" id="hero">
+  <div class="hero-badge fade-in">難あり物件専門 / 直接買取</div>
+  <h1 class="fade-in stagger-1">
+    <strong>売れないと思ってた<br>その土地・空き家<br>私たちが買い取ります。</strong>
   </h1>
-  <p class="hero-sub">
-    大手が断った物件でも、専門家が現地を見て査定します。<br>
-    まずはLINEで、あなたの土地の可能性を確認してみませんか。
+  <p class="hero-sub fade-in stagger-2">
+    再建築不可・接道なし・崖地・傾斜地・変形地。<br>
+    大手に断られた物件でも、私たちが直接買い取ります。<br>
+    仲介手数料ゼロ・初期費用ゼロ。
   </p>
-  <div class="hero-tags">
-    <span class="hero-tag">再建築不可</span>
-    <span class="hero-tag">接道義務未達</span>
-    <span class="hero-tag">不整形地</span>
-    <span class="hero-tag">崖地・傾斜地</span>
-    <span class="hero-tag">借地権付き</span>
-    <span class="hero-tag">古家付き土地</span>
-    <span class="hero-tag">共有持分</span>
-    <span class="hero-tag">相続放棄を検討中</span>
+  <div class="hero-stats fade-in stagger-3">
+    <div class="hero-stat">
+      <span class="num">0</span>
+      <span class="unit">円 / 仲介手数料</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">最短即日</span>
+      <span class="unit">査定対応</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">0</span>
+      <span class="unit">円 / 相談・査定費用</span>
+    </div>
   </div>
-  <a href="#" class="cta-btn">
-    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
-    LINEで無料査定を始める
-  </a>
-  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+  <div class="fade-in stagger-4">
+    <p class="cta-micro">＼ 24時間いつでもOK ／</p>
+    <a href="#" class="cta-btn">
+      <svg class="line-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+      まずはLINEで無料相談
+    </a>
+    <p class="cta-note">売るか決めてなくてもOK / 営業電話なし / 秘密厳守</p>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" fill="var(--white)">
+      <path d="M0,32 C360,48 720,0 1080,24 C1260,36 1380,44 1440,40 L1440,48 L0,48 Z"/>
+    </svg>
+  </div>
 </section>
 
 <!-- ========== PAIN ========== -->
 <section class="pain">
-  <h2>こんな状況で困っていませんか？</h2>
-  <p>一つでも当てはまるなら、一度ご相談ください。</p>
+  <p class="section-label fade-in">Problem</p>
+  <h2 class="section-title fade-in">こんな状況で困っていませんか？</h2>
+  <p class="section-subtitle fade-in">一つでも当てはまるなら、一度ご相談ください。</p>
   <ul class="pain-list">
-    <li><span class="pain-check"></span>不動産屋に「この土地は売れません」と断られた</li>
-    <li><span class="pain-check"></span>再建築不可と言われて、もう諦めている</li>
-    <li><span class="pain-check"></span>相続したけど使い道がなく、固定資産税だけ払い続けている</li>
-    <li><span class="pain-check"></span>接道がなくて建て替えもできない</li>
-    <li><span class="pain-check"></span>一括査定サイトに出したが、どこからも連絡が来なかった</li>
-    <li><span class="pain-check"></span>変形地・狭小地で「価値がない」と言われた</li>
+    <li class="fade-in"><span class="pain-icon"></span>不動産屋に「この土地は売れません」と断られた</li>
+    <li class="fade-in stagger-1"><span class="pain-icon"></span>再建築不可・崖地で、もう諦めている</li>
+    <li class="fade-in stagger-2"><span class="pain-icon"></span>相続したけど使い道がなく、固定資産税だけ払い続けている</li>
+    <li class="fade-in stagger-3"><span class="pain-icon"></span>接道がなくて建て替えもできない</li>
+    <li class="fade-in stagger-4"><span class="pain-icon"></span>一括査定サイトに出したが、どこからも連絡が来なかった</li>
+    <li class="fade-in"><span class="pain-icon"></span>そもそも何から始めればいいかわからない</li>
+  </ul>
+</section>
+
+<!-- ========== RISK ========== -->
+<section class="risk">
+  <p class="section-label fade-in" style="color: var(--red);">Risk</p>
+  <h2 class="section-title fade-in">売れない土地を放置すると<br>どうなるか</h2>
+  <p class="section-subtitle fade-in">
+    「いつか考えよう」が一番高くつきます。<br>
+    早めに状況を整理するだけで、結果は大きく変わります。
+  </p>
+  <ul class="risk-box fade-in">
+    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が<strong>最大6倍</strong>に</li>
+    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
+    <li><span class="risk-icon">!</span>相続人が増え、権利関係がさらに複雑化</li>
+    <li><span class="risk-icon">!</span>管理放棄による近隣トラブル・損害賠償リスク</li>
+    <li><span class="risk-icon">!</span><strong>相続登記が義務化</strong> ― 3年以内に登記しないと<strong>10万円以下の過料</strong>（過去の相続も対象。期限は2027年3月末）</li>
   </ul>
 </section>
 
 <!-- ========== SOLUTION ========== -->
 <section class="solution">
-  <p class="section-label">Solution</p>
-  <h2 class="section-title">大手が扱わない土地こそ、<br>私たちの専門領域です</h2>
-  <p class="solution-desc">
+  <div class="solution-wave-top">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" fill="var(--red-bg)">
+      <path d="M0,32 C360,48 720,0 1080,24 C1260,36 1380,44 1440,40 L1440,48 L0,48 Z"/>
+    </svg>
+  </div>
+
+  <p class="section-label fade-in">Solution</p>
+  <h2 class="section-title fade-in">安心してください。<br>私たちが直接買い取ります。</h2>
+  <p class="solution-desc fade-in">
     一般的な不動産会社は、売りやすい物件を優先します。<br>
     条件が複雑な土地は後回しにされるか、断られるのが現実です。<br>
-    私たちは、そうした土地だけに特化して取り組んでいます。
+    私たちは、そうした土地を自社で直接買い取っています。
   </p>
   <div class="solution-grid">
-    <div class="solution-card">
-      <p class="solution-card-label">再建築不可</p>
-      <h3>建て替えできなくても売れます</h3>
-      <p>リフォーム前提の買い手や、隣地所有者への売却など、再建築不可ならではのルートがあります。</p>
+    <div class="solution-card fade-in">
+      <h3>再建築不可</h3>
+      <p>建て替え不可でも直接買取</p>
     </div>
-    <div class="solution-card">
-      <p class="solution-card-label">接道義務未達</p>
-      <h3>接道がなくても方法はあります</h3>
-      <p>セットバック、隣地買い増し、位置指定道路の申請など、接道問題を解決した上での売却実績があります。</p>
+    <div class="solution-card fade-in stagger-1">
+      <h3>崖地・傾斜地</h3>
+      <p>条件が厳しくても現地確認の上で買取</p>
     </div>
-    <div class="solution-card">
-      <p class="solution-card-label">不整形地・狭小地</p>
-      <h3>形が悪くても価値はあります</h3>
-      <p>駐車場・資材置場・コンテナ利用など、住宅以外の活用を前提とした買い手をお繋ぎします。</p>
+    <div class="solution-card fade-in stagger-2">
+      <h3>接道なし</h3>
+      <p>接道義務未達でも対応可能</p>
     </div>
-    <div class="solution-card">
-      <p class="solution-card-label">相続・共有持分</p>
-      <h3>権利関係が複雑でも対応します</h3>
-      <p>共有者との調整、相続登記のサポートなど、売却前の整理からお手伝いします。</p>
+    <div class="solution-card fade-in stagger-3">
+      <h3>不整形地・狭小地</h3>
+      <p>形が悪くても買取価格を提示</p>
+    </div>
+    <div class="solution-card fade-in">
+      <h3>古家付き土地</h3>
+      <p>築年数問わずそのまま買取</p>
+    </div>
+    <div class="solution-card fade-in stagger-1">
+      <h3>相続・共有持分</h3>
+      <p>権利関係の整理からサポート</p>
+    </div>
+  </div>
+
+  <div class="solution-wave-bottom">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" fill="var(--white)">
+      <path d="M0,8 C480,40 960,0 1440,16 L1440,48 L0,48 Z"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== REASON ========== -->
+<section class="reason">
+  <p class="section-label fade-in">Why Us</p>
+  <h2 class="section-title fade-in">なぜ、大手が断った物件を<br>買い取れるのか</h2>
+  <div class="reason-grid">
+    <div class="reason-card fade-in">
+      <p class="reason-num">01</p>
+      <h3>自社で直接買い取るから</h3>
+      <p>仲介のように買い手を探す必要がありません。自社で買い取るため、条件が複雑でもスピーディーに対応できます。</p>
+    </div>
+    <div class="reason-card fade-in stagger-1">
+      <p class="reason-num">02</p>
+      <h3>自社で造成工事ができるから</h3>
+      <p>崖地・傾斜地・不整形地も、自社で造成工事を行い宅地として再生できます。外注コストがかからない分、他社より高い買取価格を提示できます。</p>
+    </div>
+    <div class="reason-card fade-in stagger-2">
+      <p class="reason-num">03</p>
+      <h3>士業との連携体制</h3>
+      <p>司法書士・弁護士と連携し、相続登記や共有持分の整理など法的な問題もワンストップで対応。買取前の障壁を私たちが取り除きます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPARE ========== -->
+<section class="compare">
+  <p class="section-label fade-in">Compare</p>
+  <h2 class="section-title fade-in">大手・仲介との違い</h2>
+  <div class="compare-table fade-in">
+    <div class="compare-row">
+      <div class="compare-head"></div>
+      <div class="compare-head">大手・一括査定</div>
+      <div class="compare-head">私たち</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">取引形態</div>
+      <div class="compare-cell">仲介（買い手探し）</div>
+      <div class="compare-cell">直接買取</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">仲介手数料</div>
+      <div class="compare-cell">売却額の3%+6万円</div>
+      <div class="compare-cell">ゼロ</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">対応物件</div>
+      <div class="compare-cell">売りやすい物件中心</div>
+      <div class="compare-cell">難あり物件に特化</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">スピード</div>
+      <div class="compare-cell">数ヶ月〜売れない</div>
+      <div class="compare-cell">最短で即日査定</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell label">営業</div>
+      <div class="compare-cell">複数社から電話</div>
+      <div class="compare-cell">1対1、LINE完結</div>
     </div>
   </div>
 </section>
 
 <!-- ========== CASES ========== -->
 <section class="cases">
-  <p class="section-label">Cases</p>
-  <h2 class="section-title">こんな土地も売却できました</h2>
+  <p class="section-label fade-in">Cases</p>
+  <h2 class="section-title fade-in">こんな土地も買い取りました</h2>
   <div class="case-list">
-    <div class="case-item">
-      <p class="case-label">CASE 01 ― 再建築不可</p>
+    <div class="case-item fade-in">
+      <p class="case-label">CASE 01 ― 再建築不可 / 千葉県四街道市</p>
       <h3>3社に断られた築50年の戸建て付き土地</h3>
-      <p class="case-detail">接道が1.8mで再建築不可。大手仲介に相談するも「引き受けられない」と言われ放置していた物件。隣地所有者への交渉を行い売却成立。</p>
-      <p class="case-result">放置期間3年 → 相談から2ヶ月で売却完了</p>
+      <p class="case-detail">接道が1.8mで再建築不可。大手仲介に相談するも「引き受けられない」と言われ3年放置していた物件。現地確認の上、直接買い取り。</p>
+      <p class="case-result">他社査定0円 → 買取額 <span class="num">280</span>万円（相談から2ヶ月で完了）</p>
     </div>
-    <div class="case-item">
-      <p class="case-label">CASE 02 ― 不整形地</p>
-      <h3>旗竿地で「値段がつかない」と言われた土地</h3>
-      <p class="case-detail">間口が2m未満の旗竿地。一括査定サイトでは0円回答。資材置場としての需要を見込み、地元事業者にマッチング。</p>
-      <p class="case-result">査定0円 → 売却額がついて成約</p>
+    <div class="case-item fade-in stagger-1">
+      <p class="case-label">CASE 02 ― 崖地・傾斜地 / 神奈川県小田原市</p>
+      <h3>傾斜がきつく「値段がつかない」と言われた土地</h3>
+      <p class="case-detail">急傾斜地で一括査定サイトでは0円回答。現地を確認し、造成・活用の可能性を踏まえて買取価格を提示。</p>
+      <p class="case-result">他社査定0円 → 買取額 <span class="num">150</span>万円</p>
     </div>
-    <div class="case-item">
-      <p class="case-label">CASE 03 ― 相続</p>
+    <div class="case-item fade-in stagger-2">
+      <p class="case-label">CASE 03 ― 相続 / 埼玉県飯能市</p>
       <h3>相続した遠方の空き家、固定資産税だけ払い続けていた</h3>
-      <p class="case-detail">親から相続した地方の空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま買取業者へ売却。</p>
-      <p class="case-result">年間の税負担から解放</p>
+      <p class="case-detail">親から相続した空き家。管理もできず固定資産税を5年間払い続けていた。古家付きのまま直接買取。</p>
+      <p class="case-result">買取額 <span class="num">320</span>万円（年間の税負担から解放）</p>
     </div>
   </div>
 </section>
 
+<!-- ========== MID CTA 1 ========== -->
+<section class="mid-cta fade-in">
+  <p>あなたの物件も買い取れるかもしれません。</p>
+  <p class="cta-micro">＼ たった30秒で完了 ／</p>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    まずはLINEで無料相談
+  </a>
+  <p class="cta-note cta-note--dark">売るか決めてなくてもOK</p>
+</section>
+
+<!-- ========== VOICE ========== -->
+<section class="voice">
+  <p class="section-label fade-in">Voice</p>
+  <h2 class="section-title fade-in">お客様の声</h2>
+  <div class="voice-list">
+    <div class="voice-item fade-in">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">3社に断られて途方に暮れていました。LINEで相談したら翌日には現地を見に来てくれて、1ヶ月後には買取が決まりました。もっと早く相談すればよかったです。</p>
+      <div class="voice-attr">
+        <div class="voice-avatar">TK</div>
+        <span>T.K.様 60代男性 / 千葉県 / 再建築不可の戸建て</span>
+      </div>
+    </div>
+    <div class="voice-item fade-in stagger-1">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">相続した崖地で、固定資産税だけ5年間払っていました。まさか買い取ってもらえるとは思っていなかったので驚きです。</p>
+      <div class="voice-attr">
+        <div class="voice-avatar">MS</div>
+        <span>M.S.様 50代女性 / 神奈川県 / 相続した崖地</span>
+      </div>
+    </div>
+    <div class="voice-item fade-in stagger-2">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">一括査定では1社も返答がなかった土地。直接買取で仲介手数料もかからず、手残りが思ったより多くて助かりました。</p>
+      <div class="voice-attr">
+        <div class="voice-avatar">HN</div>
+        <span>H.N.様 40代男性 / 埼玉県 / 接道なしの空き地</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MID CTA 2 ========== -->
+<section class="mid-cta fade-in">
+  <p>まずは状況を聞かせてください。</p>
+  <p class="cta-micro">＼ しつこい営業は一切ありません ／</p>
+  <a href="#" class="cta-btn">
+    <svg class="line-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    LINEで無料相談する
+  </a>
+  <p class="cta-note cta-note--dark">相談無料 / 営業電話なし</p>
+</section>
+
+<!-- ========== INHERITANCE ========== -->
+<section class="inheritance">
+  <p class="section-label fade-in">Notice</p>
+  <h2 class="section-title fade-in">相続登記が義務化されました</h2>
+  <p class="inheritance-desc fade-in">
+    2024年4月から相続登記が義務化され、<br>
+    過去の相続分も含めて対応が必要になりました。<br>
+    放置すると過料の対象になります。
+  </p>
+  <div class="inheritance-box">
+    <div class="inheritance-point fade-in">
+      <h3>3年以内の登記が必須</h3>
+      <p>相続を知った日から3年以内に登記しないと、10万円以下の過料が科される可能性があります。</p>
+    </div>
+    <div class="inheritance-point fade-in stagger-1">
+      <h3>過去の相続も対象</h3>
+      <p>2024年4月以前の相続も対象。期限は2027年3月末です。まだ登記していない方は早めの対応が必要です。</p>
+    </div>
+    <div class="inheritance-point fade-in stagger-2">
+      <h3>登記のサポートも対応</h3>
+      <p>提携の司法書士と連携し、相続登記の手続きからお手伝いします。登記完了を待たずにご相談いただけます。</p>
+    </div>
+  </div>
+  <div class="inheritance-highlight fade-in">
+    <p>相続した不動産の売却を検討中の方は、<br>登記と売却をまとめて進めることで手間を大幅に削減できます。</p>
+  </div>
+</section>
+
+<!-- ========== AREA ========== -->
+<section class="area">
+  <p class="section-label fade-in">Area</p>
+  <h2 class="section-title fade-in">対応エリア</h2>
+  <div class="area-list fade-in">
+    <span class="area-tag">東京都</span>
+    <span class="area-tag">神奈川県</span>
+    <span class="area-tag">千葉県</span>
+    <span class="area-tag">埼玉県</span>
+    <span class="area-tag">茨城県</span>
+    <span class="area-tag">栃木県</span>
+    <span class="area-tag">群馬県</span>
+  </div>
+  <p class="area-note fade-in">関東エリアを中心に対応しています。その他のエリアもまずはご相談ください。</p>
+</section>
+
 <!-- ========== FLOW ========== -->
 <section class="flow">
-  <p class="section-label">How it works</p>
-  <h2 class="section-title">ご相談の流れ</h2>
+  <p class="section-label fade-in">Flow</p>
+  <h2 class="section-title fade-in">ご相談の流れ</h2>
   <div class="flow-steps">
-    <div class="flow-step">
+    <div class="flow-step fade-in">
       <div class="flow-num">1</div>
       <div>
         <h3>LINEで友だち追加</h3>
         <p>ボタンを押してLINEで友だち追加。登録は10秒で完了します。</p>
       </div>
     </div>
-    <div class="flow-step">
+    <div class="flow-connector"><svg viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 0v12m-4-4l4 4 4-4"/></svg></div>
+    <div class="flow-step fade-in stagger-1">
       <div class="flow-num">2</div>
       <div>
-        <h3>AIが物件情報をヒアリング</h3>
-        <p>AIチャットがエリア・面積・状況などを質問します。わかる範囲で答えるだけでOKです。</p>
+        <h3>LINEで状況をヒアリング</h3>
+        <p>物件のエリア・面積・状況などを質問します。わかる範囲で答えるだけでOKです。</p>
       </div>
     </div>
-    <div class="flow-step">
+    <div class="flow-connector"><svg viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 0v12m-4-4l4 4 4-4"/></svg></div>
+    <div class="flow-step fade-in stagger-2">
       <div class="flow-num">3</div>
       <div>
-        <h3>専門スタッフが査定・ご提案</h3>
-        <p>AIのヒアリング内容をもとに、難あり物件の専門スタッフが売却方法と概算価格をご提案します。</p>
+        <h3>査定・買取価格のご提示</h3>
+        <p>現地確認の上、買取価格をご提示します。仲介ではないので、手数料はかかりません。</p>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ========== WHY US ===== -->
-<section class="why">
-  <p class="section-label">Why us</p>
-  <h2 class="section-title">選ばれる理由</h2>
-  <div class="why-grid">
-    <div class="why-card">
-      <p class="why-num">01</p>
-      <h3>難あり物件だけに特化</h3>
-      <p>再建築不可、接道なし、変形地。一般の不動産会社が敬遠する物件が専門領域です。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">02</p>
-      <h3>現地を見て判断します</h3>
-      <p>書類だけで「売れない」と判断しません。実際に現場を見た上で、売却可能性をお伝えします。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">03</p>
-      <h3>営業電話なし・秘密厳守</h3>
-      <p>一括査定サイトのようにしつこい電話は一切ありません。ご希望がない限り連絡しません。</p>
-    </div>
-    <div class="why-card">
-      <p class="why-num">04</p>
-      <h3>費用は一切かかりません</h3>
-      <p>相談・査定は完全無料です。売却が成立するまで費用は発生しません。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== RISK ========== -->
-<section class="risk">
-  <h2>放置し続けるとどうなるか</h2>
-  <p>
-    「いつか考えよう」と先延ばしにするほど、<br>状況は悪くなります。
-  </p>
-  <ul class="risk-box">
-    <li><span class="risk-icon">!</span>空き家の特定空家指定で固定資産税が最大6倍に</li>
-    <li><span class="risk-icon">!</span>建物の老朽化で解体費用が年々増加</li>
-    <li><span class="risk-icon">!</span>相続登記の義務化（2024年〜）で放置がさらに難しく</li>
-    <li><span class="risk-icon">!</span>近隣トラブルや管理責任のリスク</li>
-  </ul>
 </section>
 
 <!-- ========== FAQ ========== -->
 <section class="faq">
-  <p class="section-label">FAQ</p>
-  <h2 class="section-title">よくある質問</h2>
+  <p class="section-label fade-in">FAQ</p>
+  <h2 class="section-title fade-in">よくある質問</h2>
   <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q">本当に売れるんですか？</div>
-      <div class="faq-a">すべての物件に保証はできませんが、他社で断られた物件でも売却につながったケースは多数あります。まずは可能性があるかどうか、無料で診断します。</div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>本当に買い取ってもらえるんですか？</div>
+      <div class="faq-a">すべての物件に保証はできませんが、他社で断られた物件でも買取につながったケースは多数あります。まずは買取可能かどうか、無料で査定します。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">費用はかかりますか？</div>
-      <div class="faq-a">相談・査定は完全無料です。売却が成立した場合のみ、通常の仲介手数料が発生します。</div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>費用はかかりますか？</div>
+      <div class="faq-a">一切かかりません。直接買取なので仲介手数料もゼロです。査定・相談も完全無料です。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">遠方の物件でも対応できますか？</div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>査定から買取完了までどのくらいかかりますか？</div>
+      <div class="faq-a">物件の状況にもよりますが、最短で即日査定、買取完了まで1〜2ヶ月が目安です。急ぎの場合はご相談ください。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>相続登記がまだ終わっていませんが、相談できますか？</div>
+      <div class="faq-a">はい、可能です。提携の司法書士と連携し、相続登記の手続きからサポートします。登記完了を待たずにご相談いただけます。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>家の中に荷物や残置物がありますが、そのままでも大丈夫ですか？</div>
+      <div class="faq-a">そのままで問題ありません。残置物の処分もこちらで対応できます。片付け不要でお引き渡しいただけます。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>共有名義の物件ですが、他の共有者に知られずに相談できますか？</div>
+      <div class="faq-a">ご相談は秘密厳守で対応します。まずはお一人でご相談いただき、状況を整理した上で進め方をご提案します。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>建物がかなり老朽化していますが、解体費用はかかりますか？</div>
+      <div class="faq-a">解体費用を売主様にご負担いただくことはありません。古家付きのまま買い取ります。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>遠方に住んでいますが対応できますか？</div>
       <div class="faq-a">はい。まずはLINEでヒアリングし、必要に応じて現地確認を行います。遠方にお住まいでも対応可能です。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">まだ売るか決めてないのですが...</div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>まだ売るか決めてないのですが...</div>
       <div class="faq-a">まったく問題ありません。「まず今の状況を整理したい」という段階でのご相談が一番多いです。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">一括査定サイトとは何が違いますか？</div>
-      <div class="faq-a">一括査定サイトは複数社に情報を送るため大量の電話がかかります。私たちは1対1で、難あり物件に特化した専門スタッフが直接対応します。</div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>一括査定サイトとは何が違いますか？</div>
+      <div class="faq-a">一括査定サイトは複数社に情報が渡り、大量の営業電話がかかります。さらに、再建築不可や崖地の物件は査定依頼をしても1社も返答が来ないケースが少なくありません。私たちは仲介ではなく直接買取。1対1でLINEから対応します。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>買取価格に納得できなかった場合、断れますか？</div>
+      <div class="faq-a">もちろんです。査定後にお断りいただいても費用は一切かかりません。お気軽にご相談ください。</div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-q"><span class="faq-q-badge">Q</span>土地の境界が確定していませんが大丈夫ですか？</div>
+      <div class="faq-a">境界未確定の土地もそのまま買い取れます。必要に応じて測量の手配もこちらで対応します。</div>
     </div>
   </div>
 </section>
 
 <!-- ========== FINAL CTA ========== -->
 <section class="final-cta">
-  <h2>「売れない」を「売れた」に変える<br>最初の一歩を。</h2>
-  <p>
-    LINEで状況を教えていただくだけで、<br>あなたの土地に合った売却方法をご提案します。
+  <h2 class="fade-in">その土地、私たちに<br>買い取らせてください。</h2>
+  <p class="fade-in">
+    LINEで状況を教えていただくだけで、<br>買取価格をお伝えします。<br>
+    仲介手数料ゼロ・初期費用ゼロ。相談だけでも構いません。
   </p>
-  <a href="#" class="cta-btn">
-    <svg class="line-svg" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
-    LINEで無料相談する
-  </a>
-  <p class="cta-note">相談無料 / 営業電話なし / 秘密厳守</p>
+  <div class="fade-in">
+    <p class="cta-micro">＼ 相談は完全無料 ／</p>
+    <a href="#" class="cta-btn">
+      <svg class="line-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+      LINEで買取査定を依頼する
+    </a>
+    <p class="cta-note">仲介手数料ゼロ / 営業電話なし / 秘密厳守</p>
+  </div>
 </section>
+
+</main>
 
 <!-- ========== FOOTER ========== -->
 <footer>
   <p><a href="privacy.html">プライバシーポリシー</a> | <a href="tokushoho.html">特定商取引法に基づく表記</a></p>
-  <p style="margin-top: 8px;">&copy; 2026</p>
+  <p class="copy">&copy; 2026</p>
 </footer>
 
 <!-- ========== FLOATING CTA ========== -->
-<div class="floating-cta">
+<div class="floating-cta" id="floatingCta">
   <a href="#" class="cta-btn">
-    <svg class="line-svg-sm" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
+    <svg class="line-svg-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M12 1C5.926 1 1 5.07 1 10.14c0 4.487 3.801 8.268 8.972 9.166.349.075.825.23.945.529.108.271.071.695.035.966l-.153.893c-.045.27-.207 1.051.922.572 1.129-.48 6.1-3.592 8.322-6.152C22.086 13.787 23 12.07 23 10.14 23 5.07 18.074 1 12 1"/></svg>
     LINEで無料相談する
   </a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  const floatingCta = document.getElementById('floatingCta');
+  const heroSection = document.querySelector('.hero');
+  if (floatingCta && heroSection) {
+    const ctaObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        floatingCta.classList.toggle('show', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    ctaObserver.observe(heroSection);
+  }
+});
+</script>
 
 </body>
 </html>
