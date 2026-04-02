@@ -95,6 +95,23 @@
     line-height: 1.7;
   }
 
+  /* ===== HEADER ===== */
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+  }
+  .site-header img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
   /* ===== HERO ===== */
   .hero {
     position: relative;
@@ -738,15 +755,13 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-    color: var(--gold);
+    background: var(--white);
+    border: 2px solid #eee;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 24px;
-    font-weight: 800;
     flex-shrink: 0;
+    overflow: hidden;
   }
   .rep-info h3 {
     font-size: 20px;
@@ -1083,6 +1098,10 @@
 </head>
 <body>
 
+<header class="site-header">
+  <img src="assets/logo-ktestate.jpg" alt="KT ESTATE">
+</header>
+
 <main>
 <!-- ========== HERO ========== -->
 <section class="hero" id="hero">
@@ -1353,7 +1372,7 @@
   <h2 class="section-title fade-in">代表あいさつ</h2>
   <div class="rep-card fade-in">
     <div class="rep-profile">
-      <div class="rep-photo">KT</div>
+      <div class="rep-photo"><img src="assets/logo-ktestate.jpg" alt="KT ESTATE" style="width: 56px; height: auto;"></div>
       <div class="rep-info">
         <h3>内田 大晴</h3>
         <p class="rep-title">代表取締役 / 宅地建物取引士</p>
@@ -1563,8 +1582,9 @@
 
 <!-- ========== FOOTER ========== -->
 <footer>
+  <img src="assets/logo-ktestate.jpg" alt="KT ESTATE" style="height: 40px; width: auto; margin-bottom: 16px; opacity: .5;">
   <p><a href="privacy.html">プライバシーポリシー</a> | <a href="tokushoho.html">特定商取引法に基づく表記</a></p>
-  <p class="copy">&copy; 2026</p>
+  <p class="copy">&copy; 2026 KTエステート株式会社</p>
 </footer>
 
 <!-- ========== FLOATING CTA ========== -->
